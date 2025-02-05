@@ -8,9 +8,9 @@ import {
   PanelHideRightSwitch,
   PanelHideSwitch,
   TimetableBtnIcon,
-} from './MyMeritoPanel.styled';
+} from './MyWSTiHPanel.styled';
 
-export const MyMeritoPanel = ({
+export const MyWSTiHPanel = ({
   user,
   language,
   timetable,

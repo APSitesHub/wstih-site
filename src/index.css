@@ -2,13 +2,13 @@
 @import '../node_modules/modern-normalize/modern-normalize.css';
 
 :root {
-  --main-color: #406df7;
+  --main-color: #0290dc;
   --secondary-color: #ffffff;
   --secondary-burnt-color: #fffffff0;
-  --main-transparent-color: #406df750;
-  --main-semi-transparent-color: #406df785;
+  --main-transparent-color: #0290dc50;
+  --main-semi-transparent-color: #0290dc85;
   --secondary-transparent-color: #ffffff1c;
-  --accent-color: ##bce4fa;
+  --accent-color: #bce4fa;
   --accent-semi-transparent-color: ##bce4fa80;
   --accent-transparent-color: ##bce4fa70;
 

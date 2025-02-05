@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { TimetableBtnIcon } from '../MyMeritoPanel/MyMeritoPanel.styled';
+import { TimetableBtnIcon } from '../MyWSTiHPanel/MyWSTiHPanel.styled';
 
 export const TimetableBox = styled.div`
   position: absolute;

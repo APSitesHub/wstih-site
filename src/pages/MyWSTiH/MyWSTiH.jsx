@@ -17,10 +17,10 @@ import {
 import { useEffect, useState } from 'react';
 import * as yup from 'yup';
 import { MyPlatform } from './My Platform/MyPlatform';
-import { MyMeritoPanel } from './MyMeritoPanel/MyMeritoPanel';
-import { LoginErrorNote } from './MyMeritoPanel/MyMeritoPanel.styled';
+import { MyWSTiHPanel } from './MyWSTiHPanel/MyWSTiHPanel';
+import { LoginErrorNote } from './MyWSTiHPanel/MyWSTiHPanel.styled';
 
-const MyMerito = () => {
+const MyWSTiH = () => {
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [timetable, setTimetable] = useState({});
   const [user, setUser] = useState({});
@@ -32,7 +32,7 @@ const MyMerito = () => {
   axios.defaults.baseURL = 'https://ap-server-8qi1.onrender.com';
 
   useEffect(() => {
-    document.title = 'My Merito | Merito';
+    document.title = 'My WSTiH | WSTiH';
 
     const refreshToken = async () => {
       console.log('token refresher');
@@ -118,7 +118,7 @@ const MyMerito = () => {
           validationSchema={loginSchema}
         >
           <LoginForm>
-            <LoginLogo src={logo} alt="Merito logo" />
+            <LoginLogo src={logo} alt="WSTiH logo" />
             <LoginFormText>
               <StreamAuthTextHello>Hello!</StreamAuthTextHello>
               Our website is not available without authorization. Please enter
@@ -154,11 +154,7 @@ const MyMerito = () => {
         </Formik>
       ) : (
         <>
-          <MyMeritoPanel
-            user={user}
-            link={platformLink}
-            timetable={timetable}
-          />
+          <MyWSTiHPanel user={user} link={platformLink} timetable={timetable} />
           <MyPlatform platformLink={platformLink} />
         </>
       )}
@@ -166,4 +162,4 @@ const MyMerito = () => {
   );
 };
 
-export default MyMerito;
+export default MyWSTiH;
