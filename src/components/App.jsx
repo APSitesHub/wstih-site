@@ -16,6 +16,10 @@ const MyWSTiH = lazy(() =>
   import(/* webpackChunkName: "My WSTiH Page" */ '../pages/MyWSTiH/MyWSTiH')
 );
 
+const MyWSTiHPl = lazy(() =>
+  import(/* webpackChunkName: "My WSTiH Demo Page" */ '../pages/MyWSTiH/MyWSTiHPl')
+);
+
 const NotFound = lazy(() =>
   import(/* webpackChunkName: "Not Found" */ '../pages/NotFound/NotFound')
 );
@@ -30,9 +34,10 @@ export const App = () => {
       />
       <Suspense fallback={Loader} noindex={true}>
         <Routes noindex={true}>
-          <Route path="/" element={<MyWSTiH />} noindex={true}>
+          <Route path="/" element={<MyWSTiHPl />} noindex={true}>
             <Route path="*" element={<NotFound />} noindex={true} />
           </Route>
+          <Route path="/demo" element={<MyWSTiH />} noindex={true} />
           <Route path="lesson" element={<Streams />} noindex={true}>
             <Route path="logistics" element={<Stream />} noindex={true} />
             <Route
