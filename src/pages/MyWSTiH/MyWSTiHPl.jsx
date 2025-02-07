@@ -1,6 +1,11 @@
+import logo from '../../img/svg/logoNew.png';
 import axios from 'axios';
 import { FormBtnText, Label } from 'components/LeadForm/LeadForm.styled';
-import { LoginFormText, StreamSection } from 'components/Stream/Stream.styled';
+import {
+  LoginFormText,
+  LoginLogo,
+  StreamSection,
+} from 'components/Stream/Stream.styled';
 import { Formik } from 'formik';
 import {
   AdminFormBtn,
@@ -343,6 +348,7 @@ const MyWSTiHPl = () => {
           validationSchema={loginSchema}
         >
           <LoginForm>
+            <LoginLogo src={logo} alt="WSTiH logo" />
             <LoginFormText>
               Dzień dobry!
               <br />
