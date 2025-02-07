@@ -65,7 +65,10 @@ export const MyWSTiHPanelPl = ({
 
   const toggleSearch = () => {
     !isBackdropShown &&
-      (!isRatingShown || !isCalendarShown || !isTimetableShown || !isFeedbackShown) &&
+      (!isRatingShown ||
+        !isCalendarShown ||
+        !isTimetableShown ||
+        !isFeedbackShown) &&
       setIsBackdropShown(isBackdropShown => (isBackdropShown = true));
     isBackdropShown &&
       !isRatingShown &&
@@ -102,7 +105,10 @@ export const MyWSTiHPanelPl = ({
 
   const toggleCalendar = () => {
     !isBackdropShown &&
-      (!isRatingShown || !isLessonFinderShown || !isTimetableShown || !isFeedbackShown) &&
+      (!isRatingShown ||
+        !isLessonFinderShown ||
+        !isTimetableShown ||
+        !isFeedbackShown) &&
       setIsBackdropShown(isBackdropShown => (isBackdropShown = true));
     isBackdropShown &&
       !isRatingShown &&
@@ -119,7 +125,10 @@ export const MyWSTiHPanelPl = ({
 
   const toggleTimetable = () => {
     !isBackdropShown &&
-      (!isRatingShown || !isLessonFinderShown || !isCalendarShown || !isFeedbackShown) &&
+      (!isRatingShown ||
+        !isLessonFinderShown ||
+        !isCalendarShown ||
+        !isFeedbackShown) &&
       setIsBackdropShown(isBackdropShown => (isBackdropShown = true));
     isBackdropShown &&
       !isRatingShown &&
@@ -136,7 +145,10 @@ export const MyWSTiHPanelPl = ({
 
   const toggleFeedback = () => {
     !isBackdropShown &&
-      (!isRatingShown || !isLessonFinderShown || !isTimetableShown || !isCalendarShown) &&
+      (!isRatingShown ||
+        !isLessonFinderShown ||
+        !isTimetableShown ||
+        !isCalendarShown) &&
       setIsBackdropShown(isBackdropShown => (isBackdropShown = true));
     isBackdropShown &&
       !isRatingShown &&
@@ -209,7 +221,9 @@ export const MyWSTiHPanelPl = ({
 
     const getLastFeedback = async () => {
       try {
-        const userToSet = await axios.get(`/speakingusers/${user.id}`);
+        const userToSet = await axios.get(
+          `/speakingusers/65df40854f921c8f9f40fc73`
+        );
         console.log(258, userToSet);
         setCurrentStudentChart(user => (user = userToSet.data));
         console.log('eff');
@@ -233,7 +247,10 @@ export const MyWSTiHPanelPl = ({
 
   return (
     <>
-      <PanelBackdrop onClick={hideBackdrop} className={isBackdropShown ? '' : 'hidden'} />
+      <PanelBackdrop
+        onClick={hideBackdrop}
+        className={isBackdropShown ? '' : 'hidden'}
+      />
 
       <PanelHideSwitch id="no-transform" onClick={toggleButtonBox}>
         {isButtonBoxShown ? <PanelHideRightSwitch /> : <PanelHideLeftSwitch />}
@@ -258,7 +275,10 @@ export const MyWSTiHPanelPl = ({
           </APPanelMarathonBtn>
         </IframeMarathonLinkPanel>
       )} */}
-      <APPanel className={isButtonBoxShown ? '' : 'hidden'} style={{ ...panelStyles() }}>
+      <APPanel
+        className={isButtonBoxShown ? '' : 'hidden'}
+        style={{ ...panelStyles() }}
+      >
         {/* {isMultipleCourses && (
           <IframeResetLinkButton className={isMultipleCourses ? 'multiple' : ''}>
             <APPanelToggleBtn
@@ -291,7 +311,10 @@ export const MyWSTiHPanelPl = ({
           onMouseEnter={e => toggleTooltip(e)}
           onMouseOut={e => toggleTooltip(e)}
         >
-          <SearchBtnIcon id="search-btn" className={isLessonFinderShown && 'active'} />
+          <SearchBtnIcon
+            id="search-btn"
+            className={isLessonFinderShown && 'active'}
+          />
         </APPanelBtn>
         {user.package !== 'online' && (
           <APPanelBtn
@@ -308,7 +331,10 @@ export const MyWSTiHPanelPl = ({
             onMouseEnter={e => toggleTooltip(e)}
             onMouseOut={e => toggleTooltip(e)}
           >
-            <FeedbackBtnIcon id="feedback-btn" className={isFeedbackShown && 'active'} />
+            <FeedbackBtnIcon
+              id="feedback-btn"
+              className={isFeedbackShown && 'active'}
+            />
           </APPanelBtn>
         )}
         {user.package !== 'online' && (
@@ -317,7 +343,10 @@ export const MyWSTiHPanelPl = ({
             onMouseEnter={e => toggleTooltip(e)}
             onMouseOut={e => toggleTooltip(e)}
           >
-            <CalendarBtnIcon id="calendar-btn" className={isCalendarShown && 'active'} />
+            <CalendarBtnIcon
+              id="calendar-btn"
+              className={isCalendarShown && 'active'}
+            />
           </APPanelBtn>
         )}
         {user.package !== 'online' && (

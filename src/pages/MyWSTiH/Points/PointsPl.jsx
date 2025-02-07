@@ -23,7 +23,12 @@ import {
   UserPlace,
 } from './Points.styled';
 
-export const PointsPl = ({ user, flatPoints, flatMonthlyPoints, isMultipleCourses }) => {
+export const PointsPl = ({
+  user,
+  flatPoints,
+  flatMonthlyPoints,
+  isMultipleCourses,
+}) => {
   const [position, setPosition] = useState('0%');
   const [activeRating, setActiveRating] = useState(0);
 
@@ -33,7 +38,7 @@ export const PointsPl = ({ user, flatPoints, flatMonthlyPoints, isMultipleCourse
       : flatPoints.sort((a, b) => b.points - a.points);
 
   const userPlace = pointsSorted.findIndex(
-    leader => leader.name.toLowerCase() === user.name.toLowerCase()
+    leader => leader.name.toLowerCase() === 'dev acc'
   );
 
   const calculatePointerPosition = i => {
@@ -56,15 +61,17 @@ export const PointsPl = ({ user, flatPoints, flatMonthlyPoints, isMultipleCourse
       {userPlace === -1 ? (
         <PointsPlaceHolder>
           <EyesEmoji src={eyesImg} alt="Eyes emoji" width="80" />
-          <PointsPlaceHolderText>Шукаємо вас у рейтингу.</PointsPlaceHolderText>
+          <PointsPlaceHolderText>Szukamy was w rankingu</PointsPlaceHolderText>
           <PointsPlaceHolderText>
-            Виконайте ще кілька вправ, <br /> щоб бути в топі! 🤩
+            Proszę zrobić jeszcze kilka zadań, żeby być w topie! 🤩
           </PointsPlaceHolderText>
         </PointsPlaceHolder>
       ) : (
         <>
           <PointsCategoryPicker>
-            <PointsCategoryPointer style={{ transform: `translateX(${position})` }} />
+            <PointsCategoryPointer
+              style={{ transform: `translateX(${position})` }}
+            />
             <PointsCategory
               onClick={() => {
                 calculatePointerPosition(0);
@@ -90,12 +97,14 @@ export const PointsPl = ({ user, flatPoints, flatMonthlyPoints, isMultipleCourse
           <PointsUser>
             <PointsUserData>
               {pointsSorted.findIndex(
-                leader => leader.name.toLowerCase() === user.name.toLowerCase()
+                leader => leader.name.toLowerCase() === 'dev acc'
               ) + 1}
             </PointsUserData>
             <PointsUserDataWide>Student</PointsUserDataWide>
             <PointsUserData>
-              {pointsSorted[userPlace].points < 0 ? 0 : pointsSorted[userPlace].points}
+              {pointsSorted[userPlace].points < 0
+                ? 0
+                : pointsSorted[userPlace].points}
             </PointsUserData>
           </PointsUser>
           <PointsLeaderboard>

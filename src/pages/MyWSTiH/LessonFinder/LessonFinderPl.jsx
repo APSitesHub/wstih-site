@@ -104,14 +104,14 @@ export const LessonFinderPl = ({
                     lessonLevelNumber
                       .toLowerCase()
                       .includes(value.toLowerCase().trim().trimStart())) &&
-                  language === lesson.lang
+                  'pl' === lesson.lang
                 );
               }),
             ])
         )
       : setLessonsFound(
           lessonsFound =>
-            (lessonsFound = [...lessons.filter(lesson => language === lesson.lang)])
+            (lessonsFound = [...lessons.filter(lesson => 'pl' === lesson.lang)])
         );
     sessionStorage.setItem('searchValue', value);
   };
@@ -303,7 +303,9 @@ export const LessonFinderPl = ({
                           </PdfWrapper>
                           <PdfPreviewBackground
                             className={
-                              isPdfPreviewOpen && openedPdf === pdf && 'preview-open'
+                              isPdfPreviewOpen &&
+                              openedPdf === pdf &&
+                              'preview-open'
                             }
                           >
                             {isPdfPreviewOpen && openedPdf === pdf && (
@@ -335,7 +337,9 @@ export const LessonFinderPl = ({
 
                       <FaqFinderLabel
                         className={
-                          isFaqListOpen && openedFaq === lesson._id && 'faqlistopen'
+                          isFaqListOpen &&
+                          openedFaq === lesson._id &&
+                          'faqlistopen'
                         }
                       >
                         <FaqFinderInput
@@ -347,7 +351,9 @@ export const LessonFinderPl = ({
                       </FaqFinderLabel>
                       <FaqList
                         className={
-                          isFaqListOpen && openedFaq === lesson._id && 'faqlistopen'
+                          isFaqListOpen &&
+                          openedFaq === lesson._id &&
+                          'faqlistopen'
                         }
                       >
                         {answersFound.map((q, i) => (
@@ -357,14 +363,18 @@ export const LessonFinderPl = ({
                             </FaqListLink>
                             <FaqQuestion
                               className={
-                                isAnswerOpen && openedAnswer === i && 'preview-open'
+                                isAnswerOpen &&
+                                openedAnswer === i &&
+                                'preview-open'
                               }
                             >
                               {q.question}
                             </FaqQuestion>
                             <FaqPreviewBackground
                               className={
-                                isAnswerOpen && openedAnswer === i && 'preview-open'
+                                isAnswerOpen &&
+                                openedAnswer === i &&
+                                'preview-open'
                               }
                             >
                               {isAnswerOpen && openedAnswer === i && (
